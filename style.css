@@ -1,0 +1,832 @@
+@font-face {
+    font-family: "montserratBold";
+    src: url(fonts/montserrat-bold-webfont.woff2);
+}
+@font-face {
+    font-family: "montserratRegular";
+    src: url(fonts/montserrat-regular-webfont.woff2);
+}
+@font-face {
+    font-family: "montserratMedium";
+    src: url(fonts/montserrat-medium-webfont.woff2);
+}
+@font-face {
+    font-family: "montserratLight";
+    src: url(fonts/montserrat-light-webfont.woff2);
+}
+@font-face {
+    font-family: "montserratSemibold";
+    src: url(fonts/montserrat-semibold-webfont.woff2);
+}
+@font-face {
+    font-family: "lora";
+    src: url(fonts/lora-regular-webfont.woff2);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header{
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    url('Images/hero-bg.jpg');
+    padding: 20px;
+    font-family: "montserratMedium" !important;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100vh;
+}
+#logoImg{
+    width: 80px;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav #hamburger{
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    position: relative;
+}
+nav #hamburger::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    top: -7px;
+}
+nav #hamburger::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    top: 7px;
+}
+#headerContent{
+    text-align: center;
+    margin-top: 200px;
+}
+#headerContent h2{
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+#headerContent h1{
+    color: white;
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 40px;
+}
+.buttonContainer{
+    margin-top: 35px;
+}
+button{
+   width: 300px;
+   padding: 20px 0;
+   background: none;
+   border: 1px solid white;
+   color: white;
+   font-size: 12px;
+   font-weight: 500;
+   margin-bottom: 20px;
+   letter-spacing: 1px;
+   font-variant: small-caps;
+}
+button:hover{
+    background-color: white;
+    color: black;
+    transition: background 0.9s;
+}
+section{
+    text-align: center;
+}
+#greenSection{
+    background-color: #39b54a;
+    padding: 150px 35px;
+}
+ h3{
+    font-family: "montserratBold";
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+ h2{
+    font-family: "montserratMedium";
+    color: white;
+    font-size: 35px;
+}
+p{
+    font-family: "lora";
+}
+#greenSection div h2{
+    padding: 10px 20px 50px;
+    display: inline-block;
+    border-bottom: 1px solid rgba(220, 220, 220, 0.6);
+}
+#greenSection p{
+    margin-top: 40px;
+    line-height: 27px;
+}
+ul{
+    list-style: none;
+    margin-top: 60px;
+}
+ul li h3{
+    padding: 20px 20px 40px;
+    border-bottom: 1px solid rgba(220, 220, 220, 0.6);
+    display: inline-block;
+}
+ul li:last-of-type h3{
+    border: none;
+}
+#greenSection ul li h2{
+    padding-top: 40px;
+    font-size: 70px;
+}
+.itemContainer{
+    padding: 100px 30px;
+}
+.itemContainer h2{
+    color: black;
+    font-size: 25px;
+    font-weight: 200;
+    padding: 20px 0;
+    line-height: 30px;
+}
+#itemHeader h2{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.items{
+    margin-top: 50px;
+    display: inline-block;
+}
+.items p{
+    line-height: 30px;
+    color: #757575;
+}
+.leftImg{
+    display: block;
+    width: 100%;
+    max-width: 560px;
+}
+.ImgContainer li{
+    margin-top: -5px !important;
+}
+.itemContainer .servicesContainer img{
+    width: 50px;
+    margin-top: 15px;
+}
+.blackBgContainer{
+    padding-bottom: 250px;
+}
+.ImgContainer{
+    margin-top: -300px;
+    background-color: transparent;
+    padding-top: 0;
+}
+.carousel{
+    position: relative;
+    overflow: hidden;
+}
+.slides{
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    padding-bottom: 50px;
+}
+.slide{
+    text-align: center;
+    min-width: 100%;
+    padding: 20px;
+}
+.carousel .move{
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+.prev{
+    left: 0;
+}
+.next{
+    right: 0;
+}
+.indicators{
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+.indicator{
+    width: 10px;
+    height: 10px;
+    background: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+.indicator.active{
+    background: #39b54a;
+}
+.slide p{
+    font-size: 18px;
+    line-height: 30px;
+    color: #555555;
+    margin-top: 50px;
+}
+.slide .userImg{
+    width: 80px;
+    border-radius: 50%;
+    margin-top: 50px;
+}
+.slide h3{
+    margin-top: 10px;
+}
+.company{
+    font-size: 13px !important;
+    color: #555555 !important;
+    padding: 0 !important;
+    font-weight: 100 !important;
+}
+.contactText{
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+    url('Images/contact-bg.jpg.webp');
+    background-position: top;
+    background-repeat: no-repeat;
+}
+.contactContainer{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url('Images/contact-bg.jpg.webp');
+    padding-bottom: 20px;
+    max-width: 620px;
+}
+form{
+    text-align: left;
+}
+.message h3{
+    color: white;
+    margin-bottom: 50px;
+}
+input, textarea{
+    border: none;
+    background: transparent;
+    outline: none;
+    border-bottom:1px solid rgba(255, 255, 255, 0.4);
+    width: 100%;
+    margin: 20px 0 20px;
+    font-family:'montserratMedium';
+    font-weight: 200;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.774);
+    padding-bottom: 10px;
+    font-variant: small-caps;
+    resize: none;
+}
+::placeholder{
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 100;
+    font-size: 13px;
+}
+.contactContainer button{
+    background: #39b54a;
+    padding: 15px 0;
+    border: none;
+    font-variant: small-caps;
+    margin-top: 30px;
+    width: 100%;
+    font-size: 17px;
+}
+.locationContainer{
+    padding: 50px 50px 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.locationContainer h3{
+   margin-bottom: 20px;
+}
+.locationContainer ul li{
+    color: rgba(255, 255, 255, 0.3);
+    font-family:'montserratMedium';
+    font-size: 15px;
+    line-height: 30px;
+}
+.footerLogo{
+    text-align: center;
+    margin-bottom: 30px;
+}
+footer p{
+    color: rgba(255, 255, 255, 0.3);
+    font-family:'montserratMedium';
+    font-variant: small-caps;
+    line-height: 30px;
+}
+footer p::selection{
+    background-color: #39b54a;
+}
+footer h3{
+    margin: 40px 0;
+}
+footer input{
+    border: none;
+    padding: 17px 10px;
+}
+.copyrightContainer{
+    margin-top: 50px;
+    text-align: center;
+}
+
+@media screen and (min-width: 499px) {
+    header{
+        padding:35px;
+    }
+    #headerContent{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 150px;
+    }
+    #headerContent h1{
+        inline-size: 400px;
+        font-size: 35px;
+        line-height: 50px;
+    }
+    .buttonContainer{
+        width: 100%;
+    }
+    .buttonContainer button{
+        width: 85%;
+    }
+    #Heading h2{
+        font-size: 50px;
+    }
+    #greenSection p{
+        font-size: 19px;
+        line-height: 35px;
+    }
+    .Header h2{
+        font-size: 33px;
+        line-height: 40px;
+    }
+}
+
+@media screen and (min-width: 520px) {
+    #headerContent{
+        text-align: left;
+        width: 100%;
+    }
+    .welcome{
+        width: 100%;
+    }
+    .buttonContainer{
+        width: 100%;
+    }
+    .buttonContainer button{
+        width: 280px;
+    }
+}
+
+@media screen and (min-width: 620px){
+    header nav{
+        padding: 20px;
+    }
+    #headerContent h1{
+        font-size: 40px;
+        width: 430px;
+        line-height: 55px;
+    }
+    #greenHeading h2{
+        font-size: 65px;
+    }
+    #greenHeading h3{
+        font-size: 17px;
+    }
+    #greenSection ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #greenSection ul li h3{
+        border: none;
+    }
+    #greenSection ul li{
+        width: 230px;
+        border-right: 1px solid black;
+        padding: 0px;
+        padding: -10px 0;
+        margin-bottom: 30px;
+    }
+    #greenSection ul li:nth-last-child(3),
+    #greenSection ul li:last-child{
+        border: none;
+    }
+    .Header h2{
+        font-size: 40px;
+    }
+    .items div{
+        inline-size: 470px;
+    }
+    .items div p{
+        font-size: 18px;
+    }
+    .itemContainer .ImgContainer{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0;
+    }
+    .leftImg{
+        object-fit: cover;
+        object-position: top;
+        display: block;
+        width: 265px;
+    }
+    .picsCart{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .shiftImg{
+        margin-top: -67px;
+    }
+    .ImgContainer li{
+        background: black;
+    }
+    .locationContainer{
+        text-align: left;
+    }
+    .btnFooter{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    .copyrightContainer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 100px;
+    }
+    #copyright{
+        border-right: 1px solid rgba(255, 255, 255, 0.39);
+        padding-right:  50px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    #headerContent{
+        padding-left: 120px;
+    }
+    #headerContent h1{
+        width: 480px;
+    }
+    .buttonContainer{
+        margin-top: 70px;
+    }
+    .buttonContainer button{
+        width: 215px;
+        margin-right: 20px;
+    }
+    #greenSection .Para{
+        display: flex;
+        justify-content: center;
+    }
+    #greenSection .Para p{
+        inline-size: 570px;
+        font-size: 20px;
+    }
+    #greenSection ul li{
+        width: 300px;
+        max-width: 600px;
+    }
+    .leftImg{
+        width: 310px;
+    }
+    .shiftImg{
+        margin-top: -77px;
+    }
+    .ImgContainer li{
+        background: black;
+    }
+    .footerLogo{
+        text-align: left;
+    }
+    .btnFooter button{
+        width: 250px;
+    }
+    footer{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    #headerContent h1{
+        width: 620px;
+        font-size: 46px;
+        line-height: 60px;
+    }
+    .Header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .Header h2{
+        font-size: 44px;
+        inline-size: 690px;
+        line-height: 50px;
+    }
+    .itemContainer .servicesContainer{
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .items{
+        text-align: left;
+        display: flex;
+        align-items: flex-start;
+        gap: 50px;
+        max-width: 400px !important;
+    }
+    .items p{
+        font-size: 18px;
+        inline-size: 310px;;
+    }
+    .leftImg{
+        width: 408px;
+    }
+    .shiftImg{
+        margin-top: -102px;
+    }
+    .centerItems{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .carousel{
+        width: 621px;
+    }
+    .carousel .slide p{
+        font-size: 22px;
+        line-height: 45px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    #greenSection .Para p{
+        inline-size: 910px;
+        font-size: 20px;
+    }
+    #greenSection ul li{
+        width: 400px;
+        max-width: 600px;
+    }
+    .items{
+        text-align: left;
+        display: flex;
+        align-items: flex-start;
+        gap: 50px;
+        max-width: 470px !important;
+    }
+    .items p{
+        font-size: 18px;
+        inline-size: 357px;;
+    }
+    .leftImg{
+        width: 455px;
+    }
+    .shiftImg{
+        margin-top: -114px;
+    }
+    
+}
+
+@media screen and (min-width: 1024px) {
+    body{
+        overflow-x: hidden !important;
+    }
+    #headerContent{
+        padding-left: 13%;
+        text-align: left;
+        inline-size: 900px;
+    }
+    #headerContent h1{
+        inline-size: 700px;
+        line-height: 70px;
+        font-size: 55px;
+    }
+    .buttonContainer{
+        margin-top: 80px;
+    }
+    .buttonContainer button{
+        margin-right: 30px;
+    }
+    #greenSection h3{
+        font-size: 20px;
+    }
+    #greenSection h2{
+        font-size: 76px;
+        margin-top: 20px;
+    }
+    #greenSection ul li:nth-last-child(3),
+    #greenSection ul li:last-child{
+        border-right: 1px solid black;
+    }
+    #greenSection .Para{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #greenSection p{
+        inline-size: 984px;
+        font-size: 25px;
+        line-height: 45px;
+    }
+    #greenSection ul{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #greenSection h3{
+        border: none;
+    }
+    #greenSection ul li{
+        border-right: 1px solid black;
+        padding: 10px 40px 10px 0;
+        margin-left: 30px;
+        width: 300px;
+    }
+    #greenSection ul li h2, #greenSection ul li h3{
+        margin: 0;
+        padding: 0;
+    }
+    #greenSection ul li h2{
+        font-size: 84px;
+    }
+    #greenSection ul li:last-child{
+        border: none;
+    }
+     .clientContainer, .contactText .itemContainer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+     }
+    .itemContainer{
+        padding-top: 150px;
+    }
+    .itemContainer h2{
+        font-size: 53px;
+        inline-size: 1000px;
+        line-height: 70px;
+    }
+    .itemContainer .servicesContainer{
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .items{
+        text-align: left;
+        display: flex;
+        align-items: flex-start;
+        gap: 50px;
+        max-width: 482px !important;
+    }
+    .items p{
+        font-size: 18px;
+        inline-size: 359px;;
+    }
+    .items h2{
+        font-size: 30px;
+        padding-top: 0px;
+    }
+    .blackBgContainer{
+        text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .itemContainer h2{
+        inline-size: 770px;
+    }
+    .ImgContainer{
+        width: 1120px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0;
+    }
+    .leftImg{
+        object-fit: cover;
+        object-position: top;
+        display: block;
+    }
+    .picsCart{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .ImgContainer li{
+        background: black;
+    }
+    .centerItems{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .carousel{
+        width: 900px;
+    }
+    .shiftImg{
+        margin-top: -140px;
+    }
+    .slide p{
+        font-size: 30px;
+        line-height: 60px;
+    }
+    .slideContainer{
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+    }
+    #messa{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding-bottom: 30px;
+    }
+    .contactContainer{
+        padding: 50px;
+    }
+    textarea{
+        height: 116px;
+    }
+    .locationContainer{
+        background: #111111;
+    }
+    #footer{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 100px;
+    }
+    .footerMain{
+        width: 450px;
+    }
+    .footerMain p{
+        padding: 0;
+        margin: 0;
+    }
+    .footerLogo{
+        margin: 0;
+        text-align: left;
+    }
+    footer #logoImg{
+        margin-bottom: 20px;
+    }
+    .btnFooter{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .btnFooter button{
+        margin: 0;
+    }
+    footer h3{
+        margin: 0 0 30px;
+    }
+    .copyrightContainer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 100px;
+    }
+    #copyright{
+        border-right: 1px solid rgba(255, 255, 255, 0.39);
+        padding-right:  50px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    body{
+        overflow-x: hidden;
+    }  
+}
